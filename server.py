@@ -8,6 +8,9 @@ def emot_detect():
     text = request.args.get("textToAnalyze")
     r = emotion_detector(text)
 
+    if r['dominant_emotion'] is None:
+        return 'Invalid text! Please try again!.'
+
     return r
 
 @app.route("/")
