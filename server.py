@@ -1,7 +1,7 @@
 """Flask web server for the Emotion Detection application."""
 
 from flask import Flask, request, render_template
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 
@@ -29,4 +29,4 @@ def render_index_page():
     return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
